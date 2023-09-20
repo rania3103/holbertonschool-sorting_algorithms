@@ -20,7 +20,7 @@ void swap(int *val1, int *val2)
  */
 int partition(int *array, size_t left, size_t right, size_t size)
 {
-	size_t pivot = array[right];
+	int pivot = array[right];
 	size_t j, i = left - 1;
 
 	for (j = left; j <= right - 1; j++)
