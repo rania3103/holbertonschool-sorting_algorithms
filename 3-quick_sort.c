@@ -18,10 +18,10 @@ void swap(int *val1, int *val2)
  * @size: Size of the array
  * Return: The index of the pivot
  */
-int partition(int *array, int left, int right, size_t size)
+int partition(int *array, size_t left, size_t right, size_t size)
 {
 	size_t pivot = array[right];
-	size_t j,i = left - 1;
+	size_t j, i = left - 1;
 
 	for (j = left; j <= right - 1; j++)
 	{
@@ -43,7 +43,7 @@ int partition(int *array, int left, int right, size_t size)
  * @right: Ending index of the partition
  * @size: Size of the array
  */
-void Sorting(int *array, int left, int right, size_t size)
+void Sorting(int *array, size_t left, size_t right, size_t size)
 {
 	size_t index;
 
