@@ -9,20 +9,23 @@ void selection_sort(int *array, size_t size)
 	size_t i, j, posmin;
 	int tmp;
 
-	for (i = 0; i < size - 1; i++)
+	if (array != NULL && size > 0)
 	{
-		posmin = i;
-		for (j = i + 1; j < size; j++)
+		for (i = 0; i < size - 1; i++)
 		{
-			if (array[j] < array[posmin])
-				posmin = j;
+			posmin = i;
+			for (j = i + 1; j < size; j++)
+			{
+				if (array[j] < array[posmin])
+					posmin = j;
+			}
+			if (i != posmin)
+			{
+				tmp = array[i];
+				array[i] = array[posmin];
+				array[posmin] = tmp;
+			}
+			print_array(array, size);
 		}
-		if (i != posmin)
-		{
-			tmp = array[i];
-			array[i] = array[posmin];
-			array[posmin] = tmp;
-		}
-		print_array(array, size);
 	}
 }
