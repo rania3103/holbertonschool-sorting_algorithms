@@ -20,10 +20,10 @@ void swap(int *val1, int *val2)
  */
 int partition(int *array, int left, int right, size_t size)
 {
-	int pivot = array[right];
-	int i = left - 1;
+	size_t pivot = array[right];
+	size_t j,i = left - 1;
 
-	for (int j = left; j <= right - 1; j++)
+	for (j = left; j <= right - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
@@ -45,12 +45,13 @@ int partition(int *array, int left, int right, size_t size)
  */
 void Sorting(int *array, int left, int right, size_t size)
 {
+	size_t index;
+
 	if (left < right)
 	{
-		int pi = partition(array, left, right, size);
-
-		Sorting(array, left, pi - 1, size);
-		Sorting(array, pi + 1, right, size);
+		index = partition(array, left, right, size);
+		Sorting(array, left, index - 1, size);
+		Sorting(array, index + 1, right, size);
 	}
 }
 /**
