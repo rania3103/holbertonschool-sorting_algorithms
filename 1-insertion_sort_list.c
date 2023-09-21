@@ -19,7 +19,7 @@ void insertion_sort_list(listint_t **list)
 		while (prev && slot->n < prev->n)
 		{
 			if (slot->next)
-				 slot->next->prev = prev;
+				slot->next->prev = prev;
 
 			prev->next = slot->next;
 			slot->prev = prev->prev;
