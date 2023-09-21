@@ -18,15 +18,13 @@ void insertion_sort_list(listint_t **list)
 		prev = current->prev;
 		while (prev && slot->n < prev->n)
 		{
-			if (!slot->next)
-			{
-				prev->next = slot->next;
-				slot->prev = prev->prev;
-				prev->prev = slot;
-				slot->next = prev;
-			}
+			if (slot->next)
+				 slot->next->prev = prev;
 
-			slot->next->prev = prev;
+			prev->next = slot->next;
+			slot->prev = prev->prev;
+			prev->prev = slot;
+			slot->next = prev;
 
 			if (!slot->prev)
 				(*list) = slot;
