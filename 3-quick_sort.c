@@ -46,6 +46,7 @@ int partition(int *array, size_t left, size_t right, size_t size)
 void Sorting(int *array, size_t left, size_t right, size_t size)
 {
 	size_t index;
+
 	if (left < right)
 	{
 		index = partition(array, left, right, size);
